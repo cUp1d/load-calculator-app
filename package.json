@@ -10,6 +10,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-plus": "^1.0.2-beta.28",
+    "three": "^0.127.0",
+    "tween.js": "^16.6.0",
     "vue": "^3.0.0",
     "vue-step-progress": "^0.3.6"
   },
