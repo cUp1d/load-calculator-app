@@ -10,6 +10,7 @@
         </el-steps>
         <loader-selector v-if="current===0"></loader-selector>
         <parameter-setter v-else-if="current===1"></parameter-setter>
+        <result v-else-if="current===2"></result>
       </el-main>
     </el-container>
   </el-container>
@@ -18,10 +19,12 @@
 <script>
 import ParameterSetter from './components/ParameterSetter.vue'
 import LoaderSelector from "./components/LoaderSelector";
+import Result from "./components/Result";
 
 export default {
   name: 'App',
   components: {
+    Result,
     LoaderSelector,
     ParameterSetter,
   },
