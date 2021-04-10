@@ -1,18 +1,31 @@
 <template>
   <h1>STEP1: 集装箱型号选择</h1>
-  <el-row :gutter="20" v-for="row in rows" :key="row">
-    <el-col :span="8" v-for="col in row" :key="col">
-      <el-card shadow="hover" :body-style="{ padding: '5px' ,height:'40vh'}">
-        <div class="card-header"><span>{{ col.name }}</span></div>
-        <img :src="col.image" class="image">
-        <div style="padding: 14px;vertical-align: bottom">
-        <div class="bottom">
-            <el-button type="primary" class="button" @click="select(col.name)">选择</el-button>
-          </div>
-        </div>
-      </el-card>
-    </el-col>
+  <el-row>
+    <el-select v-model="value" placeholder="请选择" @change="change">
+      <el-option
+          v-for="c in containers"
+          :key="c.name"
+          :label="c.name"
+          :value="c.name">
+      </el-option>
+    </el-select>
   </el-row>
+  <el-row>
+    <el-image :src="image" :alt="value"></el-image>
+  </el-row>
+<!--  <el-row :gutter="20" v-for="row in rows" :key="row">-->
+<!--    <el-col :span="8" v-for="col in row" :key="col">-->
+<!--      <el-card shadow="hover" :body-style="{ padding: '5px' ,height:'40vh'}">-->
+<!--        <div class="card-header"><span>{{ col.name }}</span></div>-->
+<!--        <img :src="col.image" class="image">-->
+<!--        <div style="padding: 14px;vertical-align: bottom">-->
+<!--        <div class="bottom">-->
+<!--            <el-button type="primary" class="button" @click="select(col.name)">选择</el-button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </el-card>-->
+<!--    </el-col>-->
+<!--  </el-row>-->
 </template>
 
 <script>
@@ -27,6 +40,16 @@ export default {
   name: "LoaderSelector",
   data() {
     return {
+      value: 'AAU',
+      image: AAU,
+      imageMapping :{
+        "AAU": AAU,
+        "ALF": ALF,
+        "AMA":AMA,
+        "PAG":PAG,
+        "PGA":PGA,
+        "PLA":PLA,
+      },
       containers:[
         {
           "name": "AAU",
@@ -75,6 +98,9 @@ export default {
   methods:{
     select (name) {
       this.$parent.$emit("select-container", name);
+    },
+    change (val){
+      this.image = this.imageMapping[val]
     }
   }
 }
