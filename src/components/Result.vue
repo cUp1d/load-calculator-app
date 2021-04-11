@@ -1,8 +1,9 @@
 <template>
-  <h1>STEP2: 结果计算</h1>
+  <h1><span class="step">STEP3:</span> 装载结果</h1>
   <div element-loading-text="装载顺序计算中..." v-loading.fullscreen.lock="fullscreenLoading">
     <el-row>
-      <el-col :span="12" :offset="6">
+      <el-col :span="8"><div id="canvas" ></div></el-col>
+      <el-col :span="8" :offset="6">
         <el-card class="box-card">
           <div class="text item" v-for="line in text.split('\n')">
             {{ line }}<br>
@@ -11,12 +12,12 @@
       </el-col>
     </el-row>
     <el-row>
-      <div id="canvas" ></div>
+
     </el-row>
     <el-row>
       <el-button style="margin-top: 12px;" @click="draw">装载动画展示</el-button>
       <el-button style="margin-top: 12px;" @click="prev">返回</el-button>
-      <el-button style="margin-top: 12px;" @click="download">导出为xls</el-button>
+      <el-button style="margin-top: 12px;" @click="download">装载方案导出为.xls</el-button>
     </el-row>
   </div>
 </template>
@@ -41,18 +42,19 @@ export default {
   mounted() {
     setTimeout(()=>{
       this.fullscreenLoading=false
-      this.text = `总共: 480 包裹.
-          装入: 480 包裹. (100%)
+      this.text = `总共: 434 包裹.
+          装入: 434 包裹. (100%)
 
           包括:
-          货物1 - 300 个 (100%)
-          货物2 - 80 个 (100%)
-          货物3 - 100 个 (100%)
+          货物1 - 7   个 (100%)
+          货物2 - 67  个 (100%)
+          货物3 - 310 个 (100%)
+          货物4 - 50  个 (100%)
 
-          货物体积: 65.16 m3
-          (85% 集装箱总容积)
+          货物体积: 31.228 m3
+          (87.33% 集装箱总容积)
 
-          货物重量: 19000 kg.
+          货物重量: 4844.37 kg.
           (66% 集装箱设计载荷)`
     }, 1000)
   },
@@ -132,6 +134,9 @@ export default {
 </script>
 
 <style scoped>
+.step{
+  color: rgb(143,173,200);
+}
 .text {
   font-size: 14px;
 }

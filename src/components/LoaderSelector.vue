@@ -1,5 +1,5 @@
 <template>
-  <h1>STEP1: 集装箱型号选择</h1>
+  <h1><span class="step">STEP1: </span>集装器型号选择</h1>
   <el-row>
     <el-select v-model="value" placeholder="请选择" @change="change">
       <el-option
@@ -11,7 +11,7 @@
     </el-select>
   </el-row>
   <el-row>
-    <el-image :src="image" :alt="value"></el-image>
+    <el-image style="margin-top:10%" :src="image" :alt="value"></el-image>
   </el-row>
 <!--  <el-row :gutter="20" v-for="row in rows" :key="row">-->
 <!--    <el-col :span="8" v-for="col in row" :key="col">-->
@@ -40,8 +40,8 @@ export default {
   name: "LoaderSelector",
   data() {
     return {
-      value: 'AAU',
-      image: AAU,
+      value: 'PAG',
+      image: PAG,
       imageMapping :{
         "AAU": AAU,
         "ALF": ALF,
@@ -107,6 +107,9 @@ export default {
 </script>
 
 <style scoped>
+h1 .step{
+  color: rgb(143,173,200);
+}
 .card-header{
   padding: 5%;
   font-size: large;

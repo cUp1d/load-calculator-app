@@ -1,8 +1,12 @@
 <template>
-  <el-row>
-    <el-col :span="6"><loader-selector></loader-selector></el-col>
-    <el-col :span="18"><parameter-setter></parameter-setter></el-col>
+  <el-row :gutter="30">
+    <el-col :span="2"></el-col>
+    <el-col :span="8"><loader-selector></loader-selector></el-col>
+    <el-col :span="3"></el-col>
+    <el-col :span="10"><parameter-setter></parameter-setter></el-col>
+    <el-col :span="2"></el-col>
   </el-row>
+
 </template>
 
 <script>
@@ -15,5 +19,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

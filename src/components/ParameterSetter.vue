@@ -1,5 +1,5 @@
 <template>
-  <h1>STEP2: 货物信息添加</h1>
+  <h1><span class="step">STEP2: </span>货物信息添加</h1>
   <!--  <div id="form-container">-->
   <el-row v-for="(load, index) in loads" :key="index">
     <LoadParameter
@@ -9,7 +9,7 @@
         v-model:weight="load.weight"
         v-model:amount="load.amount"
     />
-    <span><el-button type="danger" icon="el-icon-delete" circle @click="removeLoad(index)"></el-button></span>
+    <span><el-button type="danger" plain  @click="removeLoad(index)"><i class="el-icon-delete" ></i></el-button></span>
   </el-row>
   <!--  </div>-->
   <el-button style="margin-top: 12px;" @click="next">开始计算</el-button>
@@ -58,8 +58,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#form-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+.step{
+  color: rgb(143,173,200);
 }
 </style>
