@@ -3,11 +3,7 @@
   <!--  <div id="form-container">-->
   <el-row v-for="(load, index) in loads" :key="index">
     <LoadParameter
-        v-model:length="load.length"
-        v-model:width="load.width"
-        v-model:height="load.height"
-        v-model:weight="load.weight"
-        v-model:amount="load.amount"
+        v-model:param="load.param"
     />
     <span><el-button type="danger" plain  @click="removeLoad(index)"><i class="el-icon-delete" ></i></el-button></span>
   </el-row>
@@ -19,31 +15,33 @@
 <script>
 import LoadParameter from "./LoadParameter";
 import eventHub from "../plugins/eventHub";
+import {ref} from 'vue'
 
 export default {
   name: 'ParameterSetter',
   components: {LoadParameter},
   data() {
     return {
-      loads: [{
-        length: 0,
-        width: 0,
-        height: 0,
-        weight: 0,
-        amount: 0,
-      }
+      loads: [
+        {param:{
+            length: ref(''),
+            width: ref(''),
+            height: ref(''),
+            weight: ref(''),
+            amount: ref(''),
+          }}
       ]
     };
   },
   methods: {
     addLoad() {
-      this.loads.push({
-        length: 0,
-        width: 0,
-        height: 0,
-        weight: 0,
-        amount: 0,
-      });
+      this.loads.push({param:{
+          length: ref(''),
+          width: ref(''),
+          height: ref(''),
+          weight: ref(''),
+          amount: ref(''),
+        }});
     },
     removeLoad(id) {
       this.loads.splice(id, 1);

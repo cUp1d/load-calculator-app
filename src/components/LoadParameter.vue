@@ -14,19 +14,19 @@
 <!--      <span><el-input-number :min="1" :max="10" v-model="amount"></el-input-number></span>-->
       <el-form label-position="top" label-width="80px" :inline="true">
         <el-form-item label="长度">
-          <el-input v-model="length" placeholder="长度"></el-input>
+          <el-input v-model="param.length" placeholder="长度"></el-input>
         </el-form-item>
         <el-form-item label="宽度">
-          <el-input v-model="width" placeholder="宽度"></el-input>
+          <el-input v-model="param.width" placeholder="宽度"></el-input>
         </el-form-item>
         <el-form-item label="高度">
-          <el-input v-model="height" placeholder="高度"></el-input>
+          <el-input v-model="param.height" placeholder="高度"></el-input>
         </el-form-item>
         <el-form-item label="重量">
-          <el-input v-model="weight" placeholder="重量"></el-input>
+          <el-input v-model="param.weight" placeholder="重量"></el-input>
         </el-form-item>
         <el-form-item label="数量">
-          <el-input v-model="amount" placeholder="数量"></el-input>
+          <el-input v-model="param.amount" placeholder="数量"></el-input>
         </el-form-item>
       </el-form>
     </div>
@@ -36,7 +36,7 @@
 <script>
 export default {
   name: "LoadParameter",
-  props: ["length", "width", "height", "weight", "amount"]
+  props: ["param"]
 };
 </script>
 
