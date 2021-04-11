@@ -1,9 +1,9 @@
 <template>
   <el-container>
-    <el-header style="margin-top: 3%"><h1>航空装载器装箱方案计算</h1></el-header>
-    <el-container style="margin-top: 3%">
+    <el-header><h1>航空装载器装箱方案计算</h1></el-header>
+    <el-container>
       <el-main>
-        <step1 v-if="current===0"></step1>
+        <step1 v-if="current===0"  style="margin-top: 3%"></step1>
         <result v-else-if="current===1"></result>
       </el-main>
     </el-container>
@@ -63,19 +63,23 @@ export default {
 
 <style>
 #app {
-  font-family: 'Montserrat', Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
 }
 .el-header{
   text-align: center;
-}
-h1{
-  font-size: 2em;
+  font-size: 20px;
   font-weight: normal;
+  color: #409EFF;
 }
-.el-row {
-  margin-bottom: 20px;
+.el-main{
+  margin-top: 1.5em;
 }
+h2{
+  font-weight: normal;
+  font-size: 1.3em;
+  color:#606266;
+}
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <h1><span class="step">STEP1: </span>集装器型号选择</h1>
+  <h2><span class="step">STEP1: </span>集装器型号选择</h2>
   <el-row>
     <el-select v-model="value" placeholder="请选择" @change="change">
       <el-option
@@ -11,7 +11,7 @@
     </el-select>
   </el-row>
   <el-row>
-    <el-image style="margin-top:10%" :src="image" :alt="value"></el-image>
+    <el-image :src="image" :alt="value"></el-image>
   </el-row>
 <!--  <el-row :gutter="20" v-for="row in rows" :key="row">-->
 <!--    <el-col :span="8" v-for="col in row" :key="col">-->
@@ -107,30 +107,8 @@ export default {
 </script>
 
 <style scoped>
-h1 .step{
-  color: rgb(143,173,200);
-}
-.card-header{
-  padding: 5%;
-  font-size: large;
-  text-align: center;
-}
-.bottom {
-  line-height: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button {
-  padding:6px 8px;
-  min-height: auto;
-  text-align-all: center;
-}
-
-.image{
-  width: 100%;
-  height:60%;
-  display: block;
+.el-image{
+  margin-top:60px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 </style>
