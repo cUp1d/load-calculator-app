@@ -3,7 +3,7 @@
     <el-header><h1>航空装载器装箱方案计算</h1></el-header>
     <el-container>
       <el-main>
-        <step1 v-if="current===0"  style="margin-top: 3%"></step1>
+        <step1 v-if="current===0"></step1>
         <result v-else-if="current===1"></result>
       </el-main>
     </el-container>
@@ -81,5 +81,4 @@ h2{
   font-size: 1.3em;
   color:#606266;
 }
-
 </style>
